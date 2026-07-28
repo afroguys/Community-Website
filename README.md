@@ -43,7 +43,7 @@ Fork form https://github.com/yagneshpatel12/society-management-webapp
 #### Go to the project directory
 
 ```bash
-  cd society-management-webapp
+  cd Community-Website
 ```
 
 #### Add Environment Variables
@@ -57,11 +57,7 @@ To run this project, you will need to add the following environment variables to
 | **JWT_ACCESS_TOKEN_SECRET**  | More than 10 character string             |
 | **JWT_REFRESH_TOKEN_SECRET** | More than 10 character string             |
 | **MONGO_URL**                | Mongodb database url                      |
-| **GMAIL_APP_USERNAME**       | your SMTP username                        |
-| **GMAIL_APP_PASSWORD**       | your SMTP App password                    |
-| **CLOUDINARY_NAME**          | Your cloudinary storage name              |
-| **CLOUDINARY_API_KEY**       | Get API_KEY in your cloudinary account    |
-| **CLOUDINARY_API_SECRET**    | Get API_SECRET in your cloudinary account |
+
 
 ### Server side setup
 
@@ -103,11 +99,11 @@ Run locally client
 npm start
 ```
 
-### Create Admin
+### Create society code
 
 **❗ important**
 
-- First time you go to `http:localhost:3000/registeradmin` and Register Admin.
+- Login to admin panel using admin password
 
 - Then Go to setting and set the society code.
 
@@ -149,7 +145,7 @@ npm start
 **Auth** :-
 
 - Register Member
-- verifying by OTP (send to gmail) and society code
+- verifying by OTP (1234) and society code
 - Change their password to clicking forgot password
 - Multiple device login
 
