@@ -37,7 +37,7 @@ Fork form https://github.com/yagneshpatel12/society-management-webapp
 #### Clone the project
 
 ```bash
-  git clone [https://github.com/yagneshpatel12/society-management-webapp.git](https://github.com/afroguys/Community-Website.git)
+  git clone (https://github.com/afroguys/Community-Website.git)
 ```
 
 #### Go to the project directory
