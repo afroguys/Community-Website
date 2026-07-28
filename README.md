@@ -8,11 +8,9 @@
 
 ## About project
 
-- For this project society name as [digital-society.](https://digital-society.herokuapp.com)
-
 - In future any residency will buy this website then digital society name will be replaced by society name.
 
-- Feel free to explore this project and any dout contact me on [yagnesh6202patel@gmail.com](mailto:yagnesh6202patel@gmail.com).
+- Feel free to explore this project.
 
 - It has a custom **Admin panel** and it's Fully **Responsive** with All type of devices.
 
@@ -24,11 +22,11 @@
 
 **Admin Login :**
 
-- Email : admin@gmail.com
-- Password : 123
+- Email : admin@admin.com
+- Password : admin123
 
-## Demo
-
+## Original Demo From Developer
+Fork form https://github.com/yagneshpatel12/society-management-webapp
 [**🔗 Digital-society**](https://digital-society.herokuapp.com)
 
 ![](https://res.cloudinary.com/digitalsocietystorage/image/upload/v1632999968/ezgif.com-gif-maker_cx2bfb.gif)
