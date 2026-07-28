@@ -14,7 +14,16 @@ const adminSchema = new  Schema(
         contacts:{  "type": ["Mixed"],required:false},
         password:{type:String,required:false},
         societyCode:{type:String,required:false},
-        adminCode:{type:String,required:false}
+        adminCode:{type:String,required:false},
+        nama_persatuan:{type:String,required:false},
+        nama_taman:{type:String,required:false},
+        moto:{type:String,required:false},
+        logo_img:{type:String,required:false},
+        icon_img:{type:String,required:false},
+        contact_email:{type:String,required:false},
+        contact_address:{type:String,required:false},
+        main_photo_1:{type:String,required:false},
+        main_photo_2:{type:String,required:false}
     },
     {
         timestamps:true,

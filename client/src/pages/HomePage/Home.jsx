@@ -1,4 +1,4 @@
-import {HeroSection,Footer,ManagmentPeoples,SocietyRules,Gallery,Event,BusinessAdvertiseHomePage,Loader} from '../../import';
+import {HeroSection,SocietyRules,Gallery,Event,BusinessAdvertiseHomePage,Loader} from '../../import';
 import {getHomePageData} from '../../http';
 import { useEffect, useState } from 'react';
 const Home = () => {
@@ -25,11 +25,10 @@ const Home = () => {
          <Event events={data.events}/>
          <BusinessAdvertiseHomePage advertises ={data.advertise}/>
          <Gallery />
-         <ManagmentPeoples management={data.management} />
+
          </>
       }
       <SocietyRules />
-      <Footer />
     </>
 };
 

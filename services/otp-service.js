@@ -67,30 +67,9 @@ return `<!DOCTYPE html>
 class OtpService {
 
     async sendOtpByGmail(email) {
-        const otp = Math.floor(1000 + Math.random() * 9000);
-        try{
-            // create reusable transporter object using the default SMTP transport
-        let transporter = nodemailer.createTransport({
-            host: "smtp.gmail.com",
-            port: 587,
-            secure: false, // true for 465, false for other ports
-            auth: {
-            user: process.env.GMAIL_APP_USERNAME, // generated ethereal user
-            pass: process.env.GMAIL_APP_PASSWORD, // generated ethereal password
-            },
-        });
-        // send mail with defined transport object
-        let info = await transporter.sendMail({
-            from: '"digitalsociety" <digitalsociety2@gmail.com>', // sender address
-            to: email, // list of receivers
-            subject: "OTP For Register family", // Subject line
-            html: GmailHTMl(otp), // html body
-        });
+        const otp = 1234;
+        console.log(`[DEV] OTP for ${email}: ${otp}`);
         return otp;
-        }catch(err){
-            console.log(err)
-        }
-       
     }
 
     verifyOtp(hashedOtp, data) {

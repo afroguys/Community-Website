@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 
 const AppContext = React.createContext();
 
@@ -11,6 +11,15 @@ const AppProvider = ({ children }) => {
     const [isAdmin,setIsAdmin]=useState(false);
     const [tempAdmin,setTempAdmin]=useState(null);
     const setAdmin =(data)=> setIsAdmin(data);
+    const [siteSettings,setSiteSettings]=useState({});
+
+    // NEW: fetch site settings on mount
+    const refreshSiteSettings = () => {
+        fetch('/api/public/settings').then(r=>r.json()).then(d=>setSiteSettings(d)).catch(()=>{});
+    };
+    useEffect(()=>{
+        refreshSiteSettings();
+    },[]);
 
     const [changepassUser,setChangePassUSer]=useState({
       hash:'',
@@ -66,6 +75,8 @@ const AppProvider = ({ children }) => {
         setUserData,
         RegisterStepsNext,
         setVerifyUserDetails,
+        siteSettings,
+        refreshSiteSettings,
       }}
     >
       {children}

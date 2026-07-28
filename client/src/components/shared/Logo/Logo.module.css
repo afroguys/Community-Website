@@ -1,12 +1,7 @@
-.logo {
+.logo h3 {
+  font-size: 20px;
   display: flex;
   align-items: center;
-}
-.logo h3 {
-  font-weight: 600;
-  color: var(--main-color);
-}
-.logo h3 i {
-  color: var(--secondary-color);
-  margin-right: 10px;
+  gap: 8px;
+  margin: 0;
 }

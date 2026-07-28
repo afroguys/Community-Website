@@ -1,0 +1,28 @@
+services:
+  app:
+    build: .
+    container_name: sena6_app
+    ports:
+      - "5366:80"
+    depends_on:
+      mongo:
+        condition: service_started
+    environment:
+      - PORT=5501
+      - MONGO_URL=mongodb://mongo:27017/society_webapp
+      - NODE_ENV=production
+      - HASH_SECRET=dev_secret_key
+      - JWT_ACCESS_TOKEN_SECRET=dev_access_secret
+      - JWT_REFRESH_TOKEN_SECRET=dev_refresh_secret
+    volumes:
+      - app_storage:/app/storage
+
+  mongo:
+    image: mongo:7
+    container_name: sena6_mongo
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
+  app_storage:

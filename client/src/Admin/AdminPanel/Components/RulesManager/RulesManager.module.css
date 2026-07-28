@@ -1,0 +1,12 @@
+.wrapper { padding: 20px; }
+.form { margin-bottom: 20px; max-width: 500px; }
+.form input, .form textarea { width: 100%; padding: 8px; margin-bottom: 8px; border: 1px solid #ddd; border-radius: 4px; }
+.form textarea { min-height: 80px; }
+.form button { background: #1069ff; color: #fff; border: none; padding: 8px 20px; border-radius: 4px; cursor: pointer; margin-right: 5px; }
+.list { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
+.card { border: 1px solid #ddd; border-radius: 8px; padding: 12px; position: relative; }
+.card h4 { margin: 0 0 5px; color: #1069ff; }
+.card p { margin: 0; font-size: 14px; color: #555; }
+.edit, .del { position: absolute; top: 5px; border: none; background: none; cursor: pointer; font-size: 16px; }
+.edit { right: 35px; }
+.del { right: 5px; }

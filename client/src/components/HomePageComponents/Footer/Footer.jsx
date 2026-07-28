@@ -1,8 +1,14 @@
 import Styles from "./Footer.module.css";
 import { Link } from "react-router-dom";
-import { Copyright } from "../../../import";
+import { useGlobalContext } from "../../../context/context";
 
+// Footer component
 const Footer = () => {
+  const { siteSettings } = useGlobalContext();
+  const email = siteSettings.contact_email || 'digitalsociety2@gmail.com';
+  const address = siteSettings.contact_address || 'Digital Society, Visnagar, India';
+  const taman = siteSettings.nama_taman || 'Digital Society';
+
   return (
     <>
       <div className={`${Styles.footerWrapper}`}>
@@ -12,14 +18,11 @@ const Footer = () => {
               <h2>Contact us</h2>
               <p>
                 <i className="fas fa-envelope"></i>
-                <span> digitalsociety2@gmail.com</span>
+                <span> {email}</span>
               </p>
-              <p style={{alignItems:'flex-start'}}>
-                      <i className="fas fa-map-marker-alt"></i>
-                <span>
-                  Digital Society ,thalota <br /> road,visnagar,gujrat,
-                  <br /> india.
-                </span>
+              <p style={{ alignItems: 'flex-start' }}>
+                <i className="fas fa-map-marker-alt"></i>
+                <span>{address}</span>
               </p>
             </div>
           </div>
@@ -27,38 +30,25 @@ const Footer = () => {
             <div>
               <h2>Quick Links</h2>
               <ul>
-                <Link to="/2dview">
-                  <li>2D view</li>
-                </Link>
-                <Link to="/advertise">
-                  <li>Advertise</li>
-                </Link>
-                <Link to="/gallery">
-                  <li>Gallery</li>
-                </Link>
-                <Link to="/contact">
-                  <li>Contact us</li>
-                </Link>
+                <Link to="/advertise"><li>Advertise</li></Link>
+                <Link to="/gallery"><li>Aktiviti Taman</li></Link>
               </ul>
             </div>
           </div>
           <div className={`${Styles.eventsPlanning}`}>
             <div>
-              <h2>Events Planning</h2>
-              <p>
-                For performing any events in the society grant permission from society admin.
-              </p>
-              <Link to="/contact">
-                <button className="btnStructure">Contact Us</button>
-              </Link>
+              <h2>Merancang Acara</h2>
+              <p>Untuk sebarang acara yang besar dalam taman, dapatkan kebenaran daripada persatuan.</p>
+              <a href={`mailto:${email}`} className="btnStructure" style={{ textDecoration: 'none', display: 'inline-block' }}>
+                <i className="fas fa-envelope"></i> {email}
+              </a>
             </div>
           </div>
         </div>
       </div>
       <div className={Styles.imagesWarning}>
-        <p>All images used in this project are downloded from unsplash.com and pexels.com .so credite goes to this websites and his users. Any images or content are not familier so you can contact us we will delete them.</p>
+        <p>{taman} &copy; {new Date().getFullYear()}. All rights reserved.</p>
       </div>
-      <Copyright />
     </>
   );
 };

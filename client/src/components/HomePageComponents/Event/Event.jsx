@@ -11,7 +11,7 @@ function Event({events}) {
     <>
       <div className={`${Styles.eventWrapper} container`}>
         <h1 className="heading" data-aos="zoom-in">
-          Upcoming Events
+          Aktiviti Taman
         </h1>
         <SwiperSlider slideArray={slideArray} />
       </div>

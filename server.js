@@ -14,7 +14,7 @@ const corsOption = {
 };
 app.use(cors(corsOption));
 app.use('/storage', express.static('storage'));
-app.use(express.json({ limit: '8mb' }));
+app.use(express.json({ limit: '50mb' }));
 app.use(router);
 
 const PORT = process.env.PORT || 5501;

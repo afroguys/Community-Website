@@ -4,6 +4,7 @@ import SwiperCore, {
   Scrollbar,
   A11y,
   Keyboard,
+  Autoplay,
 } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -16,7 +17,7 @@ import "swiper/components/pagination/pagination.scss";
 import "swiper/components/scrollbar/scrollbar.scss";
 
 function SwiperSlider({ type = "event", slideArray }) {
-  SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Keyboard]);
+  SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Keyboard, Autoplay]);
   return (
     <>
       <Swiper
@@ -24,6 +25,7 @@ function SwiperSlider({ type = "event", slideArray }) {
         slidesPerView={"auto"}
         pagination={{ dynamicBullets: true }}
         keyboard={true}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
       >
         {slideArray.map((slide) => {
           return (

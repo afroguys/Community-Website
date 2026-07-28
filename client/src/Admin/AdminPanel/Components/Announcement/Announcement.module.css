@@ -1,0 +1,11 @@
+.wrapper { padding: 20px; }
+.form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+.form input[type="text"] { padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; }
+.editor { min-height: 250px; border: 1px solid #ddd; border-radius: 4px; }
+.form button { width: 200px; }
+.list { display: flex; flex-direction: column; gap: 15px; }
+.card { border: 1px solid #ddd; border-radius: 8px; padding: 15px; position: relative; }
+.card h3 { margin: 0 0 8px; }
+.card .preview { color: #555; font-size: 13px; line-height: 1.5; margin-bottom: 8px; }
+.card small { color: #999; }
+.del { position: absolute; top: 10px; right: 10px; background: none; border: none; cursor: pointer; font-size: 16px; }

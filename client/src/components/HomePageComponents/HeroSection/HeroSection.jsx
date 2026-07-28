@@ -4,15 +4,19 @@ import "./textAnimation.css";
 import Styles from "./HeroSection.module.css";
 import anime from "animejs/lib/anime.min.js";
 import { useGlobalContext } from "../../../context/context";
-const HeroSection = () => {
-  const {isAuth}=useGlobalContext();
-  useEffect(() => {
-    var textWrapper = document.querySelector(".hero-heading .letters");
-    textWrapper.innerHTML = textWrapper.textContent.replace(
-      /\S/g,
-      "<span class='letter'>$&</span>"
-    );
 
+const HeroSection = () => {
+  const { isAuth, siteSettings } = useGlobalContext();
+  const taman = siteSettings.nama_taman || 'Taman Kita';
+  const persatuan = siteSettings.nama_persatuan || 'Persatuan Penduduk';
+  const moto = siteSettings.moto || 'Komuniti Harmoni & Sejahtera';
+  const photo1 = siteSettings.main_photo_1 || './images/img/house.webp';
+  const photo2 = siteSettings.main_photo_2 || './images/img/residency.webp';
+
+  useEffect(() => {
+    const wrapper = document.querySelector(".hero-heading .letters");
+    if (!wrapper) return;
+    wrapper.innerHTML = wrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
     anime.timeline({ loop: false }).add({
       targets: ".hero-heading .letter",
       translateY: ["1.1em", 0],
@@ -20,44 +24,26 @@ const HeroSection = () => {
       duration: 750,
       delay: (el, i) => 70 * i,
     });
-  },[]);
+  }, [siteSettings]);
 
   return (
     <div className={`${Styles.heroWrapper} container`}>
       <div className={Styles.rightSide}>
         <h1 className="hero-heading">
           <span className="text-wrapper">
-            <span className="letters">DIGITAL &nbsp;SOCIETY</span>
+            <span className="letters">{taman.toUpperCase()}</span>
           </span>
         </h1>
-        <h3>
-          Visnagar's <span style={{ color: "var(--thirdary-color)" }}>Top </span>
-          Society
-        </h3>
-        <p>
-         where we can live with nature
-and lots of space. 24 x 7 security like camera , guard , fancing. 
-digital society is known as green city of visnagar.        </p>
+        <h3>{persatuan}</h3>
+        <p>{moto}</p>
         <button className={`btnStructure ${Styles.btn}`}>
-          <span><Link to='/register'>{!isAuth ?'REGISTER YOUR FAMILY':'GO TO PROFILE'}</Link></span>
-          <div>
-            <img src="./images/icons/arrow.svg" alt="" />
-          </div>
+          <span><Link to='/register'>{!isAuth ? 'Daftar' : 'GO TO PROFILE'}</Link></span>
+          <div><img src="./images/icons/arrow.svg" alt="" /></div>
         </button>
       </div>
       <div className={Styles.leftSide}>
-        <img
-          src="./images/img/house.webp"
-          data-aos="fade-down"
-          className={Styles.houseImg}
-          alt=""
-        />
-        <img
-          src="./images/img/residency.webp"
-          data-aos="fade-left"
-          className={Styles.residencyImg}
-          alt=""
-        />
+        <img src={photo1} data-aos="fade-down" className={Styles.houseImg} alt="" />
+        <img src={photo2} data-aos="fade-left" className={Styles.residencyImg} alt="" />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getAdvertise } from "../../http";
-import {BusinessAdvertiseCard,Copyright,Loader} from '../../import';
+import {BusinessAdvertiseCard,Loader} from '../../import';
 import Styles from "./BusinessAdvertisePage.module.css";
 
 const BusinessAdvertise = () => {
@@ -58,7 +58,7 @@ const BusinessAdvertise = () => {
       </div>
     </>
  }
-      <Copyright />
+
     </>
   );
 };

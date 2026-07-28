@@ -23,7 +23,20 @@ export const forgotPassword = (data) => api.post('/api/forgotPassword/verifyUser
 export const changePassword = (data) => api.post('/api/forgotPassword/changePassword',data);
 export const updateUser = (data)=> api.post('/api/updateUser',data);
 export const userOperations = (data)=>api.post('/api/userOperations',data);
-export const complaine = (data)=>api.post('/api/complaine',data);
+export const adminSetting = (data)=>api.post('/api/adminSetting',data);
+
+// === NEW ADMIN ENDPOINTS ===
+export const getPendingUsers = () => api.get('/api/admin/getPendingUsers');
+export const approveUser = (data) => api.post('/api/admin/approveUser',data);
+export const rejectUser = (data) => api.post('/api/admin/rejectUser',data);
+export const getAllUsers = () => api.get('/api/admin/getAllUsers');
+export const addGalleryImage = (data) => api.post('/api/admin/addGalleryImage',data);
+export const deleteGalleryImage = (data) => api.post('/api/admin/deleteGalleryImage',data);
+export const addRule = (data) => api.post('/api/admin/addRule',data);
+export const updateRule = (data) => api.post('/api/admin/updateRule',data);
+export const deleteRule = (data) => api.post('/api/admin/deleteRule',data);
+export const getGalleryImages = (params) => api.get('/api/public/getGalleryImages',{params});
+export const getRules = () => api.get('/api/public/getRules');
 
 //public endpoints
 export const contactForm = (data) => api.post('/api/contactForm',data);
@@ -31,11 +44,11 @@ export const getAdvertise =(data)=>api.get('/api/getAdvertise',data);
 export const getMembers = (data)=>api.get('/api/getMembers',data);
 export const getProfile = (data)=>api.post('/api/getMemberProfile',data);
 export const getHomePageData = (data)=>api.get('/api/getHomePageData',data);
+export const getSiteSettings = () => api.get('/api/public/settings');
 
-//Adming endpoints
+//Admin endpoints
 export const verifyAdmin = (data)=>api.post('/api/verifyAdmin',data);
 export const registerAdmin = (data)=>api.post('/api/registerAdmin',data);
 export const logoutAdmin =(data)=>api.post('/api/logoutAdmin',data);
 export const deleteUser=(data)=>api.post('/api/deleteUser',data);
 export const adminDataOperation = (data)=>api.post('/api/adminDataOperation',data);
-export const adminSetting = (data)=>api.post('/api/adminSetting',data);

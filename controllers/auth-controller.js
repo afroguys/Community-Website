@@ -27,6 +27,9 @@ class AuthController{
           const user = await userService.findUser({email});
           const hashPassword = await hashService.hashData(password);
           if(user && user.password === hashPassword){
+            if (!user.approved) {
+              return res.json({auth:false,activate:true,message:'Your account is pending admin approval. Please wait for verification.'});
+            }
             const { refreshToken, accessToken } = await tokenService.generateTokens({_id: user._id});
             await tokenService.updateRefreshToken(user._id, refreshToken);
             res.cookie('refreshToken', refreshToken, {

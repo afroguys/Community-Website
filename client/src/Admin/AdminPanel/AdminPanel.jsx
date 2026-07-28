@@ -11,10 +11,13 @@ import { Logo,Loader } from '../../import';
 import Events from './Components/Events/Events';
 import Members from './Components/Members/Members';
 import Management from './Components/Management/Management';
-import Contacts from './Components/Contacts/Contacts';
+import Announcement from './Components/Announcement/Announcement';
 import Complaines from './Components/Complaines/Complaines';
 import Advertises from './Components/Advertises/Advertises';
 import Settings from './Components/Settings/Settings';
+import PendingUsers from './Components/PendingUsers/PendingUsers';
+import GalleryManager from './Components/GalleryManager/GalleryManager';
+import RulesManager from './Components/RulesManager/RulesManager';
 
 const components = {
     1:Events,
@@ -22,8 +25,11 @@ const components = {
     3:Advertises,
     4:Management,
     5:Complaines,
-    6:Contacts,
-    7:Settings
+    6:Announcement,
+    7:Settings,
+    8:PendingUsers,
+    9:GalleryManager,
+    10:RulesManager
 }
 const AdminPanel = () => {
     const {setAdmin}=useGlobalContext();
@@ -109,13 +115,16 @@ const AdminPanel = () => {
                         </div>
                     </div>
                     <ul className='adminLinks'>
-                       <li><i className="fas fa-calendar-week"></i>Events</li>
-                       <li><i className="fas fa-users" ></i>All Members</li>
-                       <li><i className="fas fa-ad"></i>Advertise</li>
-                       <li><i className="fas fa-image"></i>Management</li>
-                       <li><i className="fas fa-frown"></i>Complaine</li>
-                       <li><i className="fas fa-phone-alt"></i>Contacts</li>
-                       <li><i className="fas fa-cog"></i>Setting</li>
+                       <li onClick={()=>setComponentNumber(1)}><i className="fas fa-calendar-week"></i>Events</li>
+                       <li onClick={()=>setComponentNumber(2)}><i className="fas fa-users" ></i>All Members</li>
+                       <li onClick={()=>setComponentNumber(3)}><i className="fas fa-ad"></i>Advertise</li>
+                       <li onClick={()=>setComponentNumber(4)}><i className="fas fa-image"></i>Management</li>
+                       <li onClick={()=>setComponentNumber(5)}><i className="fas fa-frown"></i>Complaine</li>
+                       <li onClick={()=>setComponentNumber(6)}><i className="fas fa-bullhorn"></i>Announcement</li>
+                       <li onClick={()=>setComponentNumber(7)}><i className="fas fa-cog"></i>Setting</li>
+                       <li onClick={()=>setComponentNumber(8)}><i className="fas fa-clock"></i>⏳ Pending Users</li>
+                       <li onClick={()=>setComponentNumber(9)}><i className="fas fa-images"></i>🖼️ Gallery</li>
+                       <li onClick={()=>setComponentNumber(10)}><i className="fas fa-gavel"></i>📋 Rules</li>
                        <li style={{color:'red'}} onClick={logout}><i className="fas fa-sign-out-alt"></i>Log out</li>
                     </ul>
                </div>

@@ -9,7 +9,8 @@ export {default as Gallery} from './components/HomePageComponents/Gallery/Galler
 // --------------
 export {default as Home} from "./pages/HomePage/Home";
 export {default as Navbar} from "./components/shared/Navbar/Navbar";
-export {default as Contact } from "./pages/ContactPage/Contact";
+export {default as Contact} from "./pages/ContactPage/Contact";
+export {default as AnnouncementPage} from './pages/AnnouncementPage/Announcement';
 export {default as BusinessAdvertisePage } from "./pages/BuinessAdvertisePage/BusinessAdvertisePage";
 export {default as GalleryPage } from "./pages/GalleryPage/Gallery";
 export {default as LoginPage } from "./pages/LoginPage/Login";
@@ -22,7 +23,10 @@ export {default as AllMembers} from "./pages/AllMembers/AllMembers"
 export {default as VisitProfile} from "./pages/VisitProfile/VisitProfile";
 export {default as RegisterAdmin} from "./Admin/RegisterAdmin/RegisterAdmin";
 export {default as AdminPanel}  from "./Admin/AdminPanel/AdminPanel";
-export {default as Error} from "./pages/Error/Error";
+export {default as Error} from './pages/Error/Error';
+export {default as PendingUsers} from './Admin/AdminPanel/Components/PendingUsers/PendingUsers';
+export {default as GalleryManager} from './Admin/AdminPanel/Components/GalleryManager/GalleryManager';
+export {default as RulesManager} from './Admin/AdminPanel/Components/RulesManager/RulesManager';
 export {default as BusinessAdvertiseCard} from './components/shared/BusinessAdvertiseCard/Card';
 export {default as Copyright} from './components/shared/Copyright/Copyright';
 export {default as Logo} from './components/shared/Logo/Logo';

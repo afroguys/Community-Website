@@ -10,7 +10,7 @@ const BusinessAdvertiseHomePage = ({advertises}) => {
     slideArray.push(
       <Link to="/advertise">
         <p className={`secondary-heading ${Styles.btn}`}>
-          Explore More Advertise
+          Iklan Lain
           <span>
             <i className="fas fa-arrow-right" ></i>
           </span>
@@ -24,7 +24,7 @@ const BusinessAdvertiseHomePage = ({advertises}) => {
 
       <div className="container container-margin-top">
         <h1 className="heading" data-aos="zoom-in">
-          Business Advertise
+          Iklan
         </h1>
           <SwiperSlider type="advertise" slideArray={slideArray} />
       </div>

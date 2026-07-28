@@ -1,4 +1,7 @@
-/node_modules
+node_modules/
+client/build/
+client/node_modules/
 .env
-.vscode
-fakedata.txt
+storage/
+*.log
+.DS_Store

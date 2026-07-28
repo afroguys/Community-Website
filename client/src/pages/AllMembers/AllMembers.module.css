@@ -1,55 +1,45 @@
-.memberTable {
-  width: 800px;
-  max-width: 90%;
-  margin: 30px auto;
-  margin-top: 40px;
+.wrapper { padding: 40px 0; }
+.cardList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
 }
-.memberTable table {
-  width: 90%;
-  margin: auto;
-  text-align: center;
-  border-radius: 5px;
-  color: var(--primary-text);
-  padding: 20px 10px;
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px 20px;
+    text-align: center;
+    transition: transform 0.2s;
 }
-.memberTable table th {
-  padding: 10px 0px;
+.card:hover { transform: translateY(-3px); }
+.imgWrap {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--main-color);
 }
-.memberTable table td {
-  padding: 5px 0px;
-  font-weight: 500;
+.imgWrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-@media only screen and (max-width: 650px) {
-  .memberTable {
-    overflow-x: scroll;
-  }
+.card h3 {
+    font-size: 18px;
+    margin: 0 0 5px;
+    color: var(--primary-text);
 }
-
-.r1 {
-  width: 80px;
-  min-width: 80px;
+.card .role {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--main-color);
+    margin: 0 0 8px;
 }
-.r2 {
-  width: 80px;
-  min-width: 80px;
-}
-.r2 img {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-.r3 {
-  width: 150px;
-  min-width: 150px;
-}
-.r4 {
-  width: 150px;
-  min-width: 150px;
-}
-.r5 {
-  width: 60px;
-  min-width: 60px;
-  color: blue;
-  cursor: pointer;
+.card .desc {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
 }

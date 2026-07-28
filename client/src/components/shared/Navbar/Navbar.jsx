@@ -103,7 +103,7 @@ useEffect(()=>{
                   >
                   <li>
                     <i className="fas fa-ad"></i>
-                  Advertise
+                  Iklan
               </li>
                 </NavLink>
                 <NavLink
@@ -113,7 +113,7 @@ useEffect(()=>{
                   >
                   <li>
                     <i className="fas fa-users"></i>
-                  All Members
+                  Management
               </li>
                 </NavLink>
                 <NavLink
@@ -123,17 +123,17 @@ useEffect(()=>{
                   >
                   <li>
                     <i className="fas fa-image"></i>
-                  Gallery
+                  Galeri
               </li>
                 </NavLink>
                 <NavLink
                   exact
                   activeClassName={`${Styles.menuActive}`}
-                  to="/contact"
+                  to="/announcement"
                   >
                   <li>
-                    <i className="fas fa-phone-alt"></i>
-                  Contact us
+                    <i className="fas fa-bullhorn"></i>
+                  Pengumuman
               </li>
                 </NavLink>
                 {

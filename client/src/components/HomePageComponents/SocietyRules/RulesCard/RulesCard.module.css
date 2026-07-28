@@ -4,6 +4,9 @@
   max-width: 95%;
   border-radius: 10px;
   background: white;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .rulesCard h3 {
   color: var(--main-color);
@@ -11,11 +14,13 @@
   font-weight: 500;
   border: 2px solid var(--main-color);
   border-radius: 20px;
-  display: inline;
+  display: inline-block;
+  width: fit-content;
   position: relative;
   top: 12px;
   left: 20px;
   font-size: 16px;
+  white-space: nowrap;
 }
 .rulesCard p {
   padding: 25px;
@@ -24,22 +29,14 @@
   color: var(--primary-text);
   font-size: 14px;
   font-weight: 600;
+  flex-grow: 1;
 }
+
 @media only screen and (max-width: 850px) {
-  .rulesCard {
-    width: 45%;
-    margin: 8px;
-  }
+  .rulesCard { width: 45%; margin: 8px; }
 }
 @media only screen and (max-width: 500px) {
-  .rulesCard {
-    width: 100%;
-    margin: 5px;
-  }
-  .rulesCard h3 {
-    font-size: 16px;
-  }
-  .rulesCard p {
-    font-size: 13px;
-  }
+  .rulesCard { width: 100%; margin: 5px; }
+  .rulesCard h3 { font-size: 16px; }
+  .rulesCard p { font-size: 13px; }
 }

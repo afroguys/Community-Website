@@ -5,12 +5,12 @@ import { useGlobalContext } from './context/context';
 import { Switch, Route, useLocation,Redirect } from "react-router-dom";
 import {useLoadingWithRefresh} from './useLoadingWithRefresh/useLoadingWithRefresh';
 import { Home,Navbar,Contact,BusinessAdvertisePage,GalleryPage,LoginPage,Register,Profile,Loader,
-       ForgotPassword,Complaine, AllMembers ,VisitProfile,RegisterAdmin,Error,AdminPanel} from './import'
+       ForgotPassword,Complaine,AnnouncementPage, AllMembers ,VisitProfile,RegisterAdmin,Error,AdminPanel,Footer} from './import'
 
   const App = () => {
   const location = useLocation();
   const {loading} = useLoadingWithRefresh();
-  const {isAdmin}=useGlobalContext();
+  const {isAdmin, siteSettings}=useGlobalContext();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname],[]);
@@ -19,6 +19,24 @@ import { Home,Navbar,Contact,BusinessAdvertisePage,GalleryPage,LoginPage,Registe
       duration: 800,
     });
   }, []);
+  // Dynamic favicon
+  useEffect(() => {
+    if (siteSettings.icon_img) {
+      let link = document.querySelector('link[rel="icon"]');
+      if (!link) {
+        link = document.createElement('link');
+        link.rel = 'icon';
+        document.head.appendChild(link);
+      }
+      link.href = siteSettings.icon_img;
+    }
+  }, [siteSettings.icon_img]);
+
+  // Dynamic base document title
+  useEffect(() => {
+    const name = siteSettings.nama_taman || 'Digital Society';
+    document.title = name;
+  }, [siteSettings.nama_taman]);
    useEffect(()=>{
     if(isAdmin){
       document.body.style.overflowY='hidden !important'
@@ -59,6 +77,9 @@ import { Home,Navbar,Contact,BusinessAdvertisePage,GalleryPage,LoginPage,Registe
         <Route exact path="/allmembers/:publicUrl">
           <VisitProfile />
         </Route>
+        <Route exact path="/announcement">
+          <AnnouncementPage />
+        </Route>
         <Route exact path="/contact">
           <Contact />
         </Route>
@@ -81,9 +102,11 @@ import { Home,Navbar,Contact,BusinessAdvertisePage,GalleryPage,LoginPage,Registe
           <Error/>
         </Route>
       </Switch>
+      <Footer />
     </>
     );
 };
+
 const SemiProtectedRoute = ({ children, ...rest }) => {
    const { isAuth,isActivate} = useGlobalContext();
     return (

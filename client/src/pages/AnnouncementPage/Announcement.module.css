@@ -1,0 +1,14 @@
+.list { max-width: 800px; margin: 30px auto; display: flex; flex-direction: column; gap: 20px; }
+.card { background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.2s; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+.card h3 { margin: 0 0 8px; color: var(--main-color); }
+.excerpt { color: #555; font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+.meta { display: flex; justify-content: space-between; align-items: center; color: #999; font-size: 12px; }
+.readMore { color: var(--main-color); font-weight: 600; }
+
+.detail { max-width: 800px; margin: 30px auto; background: #fff; border-radius: 10px; padding: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.detail h2 { margin: 0 0 8px; color: var(--main-color); }
+.detail small { color: #999; }
+.detail .content { font-size: 15px; line-height: 1.8; color: #333; }
+.detail .content img { max-width: 100%; border-radius: 8px; }
+.back { background: none; border: 1px solid #ddd; padding: 8px 16px; border-radius: 4px; cursor: pointer; margin-bottom: 15px; }
