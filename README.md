@@ -1,4 +1,4 @@
-# Society-Management-WebApp
+# Community-Management-WebApp
 
 - A society personal website where we can manage all information about society.
 
@@ -18,7 +18,7 @@
 
 **Register Member :**
 
-- society_code : 123UI
+- Set society code: admin dashboard → Settings
 
 **Admin Login :**
 
